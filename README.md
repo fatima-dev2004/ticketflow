@@ -10,6 +10,10 @@ Instead of yet another e-commerce demo, it tackles problems that naturally
 require distributed-systems patterns: limited seat inventory, concurrent
 bookings, unreliable payment providers, and asynchronous notifications.
 
+Le cahier des charges détaillé (en français) est disponible dans
+[`docs/CAHIER_DES_CHARGES.md`](docs/CAHIER_DES_CHARGES.md). Il distingue les
+composants déjà présents des éléments planifiés et des choix restant à valider.
+
 ## What you will learn
 
 - **Service discovery & routing**: Eureka and Spring Cloud Gateway
@@ -27,13 +31,14 @@ bookings, unreliable payment providers, and asynchronous notifications.
 |---|---|---|---|
 | `customer-service` | Customer profiles (CRUD) | Spring Web, JPA | Done |
 | `api-gateway` | Single entry point, routing, rate limiting | Spring Cloud Gateway | Done |
-| `discovery-service` | Service registry | Eureka | Done |
-| `event-service` | Events and seats catalog | Spring Web, JPA | Planned |
+| `discovery-server` | Service registry | Eureka | Done |
+| `event-service` | Events catalog (create, publish, close) | Spring Web, JPA | Done |
 | `config-server` | Centralized configuration | Spring Cloud Config | Planned |
 | `booking-service` | Booking and seat locking | OpenFeign, Resilience4J | Planned |
 | `payment-service` | Simulated payment provider (random failures) | Resilience4J | Planned |
 | `notification-service` | Confirmation emails/SMS | Kafka consumer | Planned |
-| `ai-assistant-service` | Natural-language search, recommendations | Spring AI | Later |
+| `web-frontend` | Event catalog and customer booking journey | Angular | Planned |
+| `ai-assistant-service` | Read-only assistant via Telegram | Cloud AI provider + Telegram Bot API (to be confirmed) | Planned |
 
 ## Roadmap
 
